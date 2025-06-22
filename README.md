@@ -23,17 +23,6 @@ Review System: Enable users to leave reviews and ratings for listed properties.
 
 Performance Optimization: Includes database indexing and caching for faster response times.
 
-Tech Stack
-Backend: Django, Django REST Framework
-
-Database: PostgreSQL
-
-APIs: REST (OpenAPI), GraphQL
-
-Task Queue: Celery with Redis
-
-Deployment: Docker, CI/CD pipelines
-
 API Endpoints
 👤 Users
 GET /users/ - List users
@@ -99,3 +88,13 @@ Conducts manual and automated testing to identify bugs and ensure feature functi
 ### 🧠 Project Manager *(optional but commonly included)*
 **Responsibility**:
 Coordinates the team, manages timelines, and ensures milestones are met. Acts as the communication bridge between technical teams and stakeholders, prioritizing tasks and maintaining project scope.
+
+Technology	Stack
+Django - A high-level Python web framework used to build secure and maintainable backend applications. Handles routing, models, and admin interfaces.
+Django REST Framework - An extension of Django for building RESTful APIs. Facilitates serialization, authentication, and permissions.
+PostgreSQL - A powerful, open-source relational database system used for storing structured data such as users, properties, and bookings.
+GraphQL - A query language for APIs that enables flexible and efficient data retrieval by allowing clients to specify exactly what data they need.
+Celery - An asynchronous task queue used for background jobs like sending emails, processing payments, and notifications.
+Redis - An in-memory data store used for caching, session storage, and as a Celery message broker to enhance performance.
+Docker - A containerization platform that ensures consistency across development, testing, and production environments.
+CI/CD Pipelines - Automates testing, integration, and deployment processes to improve code quality and accelerate delivery.
