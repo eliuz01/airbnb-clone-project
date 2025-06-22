@@ -243,3 +243,57 @@ The system provides well-structured RESTful and GraphQL APIs with OpenAPI docume
 
 Incorporates database indexing and caching strategies to improve speed and reduce server load. This ensures that the application remains responsive, especially during high-traffic usage.
 
+
+"API Security"
+### 🔑 Authentication
+
+The project uses secure authentication mechanisms (e.g., JWT or token-based auth) to verify user identities. This ensures that only legitimate users can access protected endpoints, such as managing properties or making bookings.
+
+> 🔐 **Why it matters**: Prevents unauthorized users from impersonating others or gaining access to private data.
+
+### 🛂 Authorization
+
+Role-based access control is implemented to ensure users can only perform actions allowed for their role (e.g., only hosts can create properties, guests can only book). Endpoint-level permissions enforce these restrictions.
+
+> 🔐 **Why it matters**: Ensures separation of concerns and protects platform functionality from misuse or privilege escalation.
+
+---
+
+### 📉 Rate Limiting
+
+API rate limiting is enforced to prevent abuse by limiting the number of requests a user or IP address can make within a given timeframe.
+
+> 🔐 **Why it matters**: Protects the system from brute-force attacks, denial-of-service (DoS), and server overload.
+
+---
+
+### 🧼 Input Validation & Sanitization
+
+All incoming requests are validated and sanitized to protect against common threats like SQL injection, XSS, and malformed data.
+
+> 🔐 **Why it matters**: Ensures that malicious inputs cannot exploit vulnerabilities in the application logic or database.
+
+---
+
+### 🔐 Secure Payments
+
+Payment endpoints use encrypted connections (HTTPS) and integrate with trusted third-party providers. Sensitive payment data is never stored on the server directly.
+
+> 🔐 **Why it matters**: Prevents financial data theft and ensures compliance with security standards like PCI-DSS.
+
+---
+
+### 📊 Audit Logging (optional for scale-up)
+
+Critical actions (e.g., payment transactions, admin access, booking changes) are logged for audit and monitoring purposes.
+
+> 🔐 **Why it matters**: Helps detect and investigate suspicious activity and supports accountability.
+
+---
+
+### 🌐 CORS Protection
+
+Cross-Origin Resource Sharing (CORS) policies are configured to only allow trusted origins to access the backend APIs.
+
+> 🔐 **Why it matters**: Prevents unauthorized web applications from interacting with the API.
+
