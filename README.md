@@ -98,3 +98,115 @@ Celery - An asynchronous task queue used for background jobs like sending emails
 Redis - An in-memory data store used for caching, session storage, and as a Celery message broker to enhance performance.
 Docker - A containerization platform that ensures consistency across development, testing, and production environments.
 CI/CD Pipelines - Automates testing, integration, and deployment processes to improve code quality and accelerate delivery.
+
+Great — here's how you can complete **Task 3: Database Design Overview** for your `README.md` file:
+
+---
+
+“Database Design”
+### 1. **User**
+Represents individuals using the platform either as guests or hosts.
+
+**Fields:**
+
+* `id` (Primary Key)
+* `username`
+* `email`
+* `password_hash`
+* `is_host` (Boolean to identify hosts)
+
+**Relationships:**
+
+* One user can **list multiple properties**
+* One user can **create multiple bookings**
+* One user can **write multiple reviews**
+
+---
+
+### 2. **Property**
+
+Represents a listing created by a host.
+
+**Fields:**
+
+* `id` (Primary Key)
+* `title`
+* `description`
+* `location`
+* `price_per_night`
+* `host_id` (Foreign Key → User)
+
+**Relationships:**
+
+* A property is **owned by one user (host)**
+* A property can have **many bookings**
+* A property can receive **multiple reviews**
+
+---
+
+### 3. **Booking**
+
+Captures reservation data when a guest books a property.
+
+**Fields:**
+
+* `id` (Primary Key)
+* `user_id` (Foreign Key → User)
+* `property_id` (Foreign Key → Property)
+* `start_date`
+* `end_date`
+* `status` (e.g., confirmed, cancelled)
+
+**Relationships:**
+
+* A booking is made by **one user**
+* A booking is linked to **one property**
+
+---
+
+### 4. **Payment**
+
+Tracks financial transactions related to bookings.
+
+**Fields:**
+
+* `id` (Primary Key)
+* `booking_id` (Foreign Key → Booking)
+* `amount`
+* `payment_method` (e.g., credit card, PayPal)
+* `status` (e.g., paid, failed)
+
+**Relationships:**
+
+* One payment is associated with **one booking**
+
+---
+
+### 5. **Review**
+
+Represents feedback given by a user about a property.
+
+**Fields:**
+
+* `id` (Primary Key)
+* `user_id` (Foreign Key → User)
+* `property_id` (Foreign Key → Property)
+* `rating` (1–5 stars)
+* `comment`
+
+**Relationships:**
+
+* A review is written by **one user**
+* A review is for **one property**
+
+---
+
+### 🔗 Entity Relationship Summary
+
+* `User (1) — (M) Property`
+* `User (1) — (M) Booking`
+* `User (1) — (M) Review`
+* `Property (1) — (M) Booking`
+* `Property (1) — (M) Review`
+* `Booking (1) — (1) Payment`
+
