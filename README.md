@@ -297,3 +297,31 @@ Cross-Origin Resource Sharing (CORS) policies are configured to only allow trust
 
 > 🔐 **Why it matters**: Prevents unauthorized web applications from interacting with the API.
 
+
+
+Here's the **"CI/CD Pipeline"** section you can add to your `README.md` to meet the project requirements:
+
+---
+
+## 🔁 CI/CD Pipeline
+
+### What is CI/CD?
+**CI/CD (Continuous Integration and Continuous Deployment)** is a software development practice that automates the process of integrating code changes, testing, and deploying them to production. CI ensures that code changes are automatically tested and integrated into the shared repository, while CD automates the delivery of those changes to staging or production environments.
+
+### Why CI/CD Matters for This Project
+In the Airbnb Clone project, CI/CD pipelines help:
+
+* **Ensure code quality** by automatically running tests on each push or pull request.
+* **Reduce manual errors** during deployment by automating build and release steps.
+* **Speed up development cycles** by enabling fast feedback and reliable delivery of new features.
+* **Maintain consistency** across development, staging, and production environments.
+
+### Tools Used
+* **GitHub Actions**: Automates tasks like testing, building, and deploying the application on every code update.
+* **Docker**: Provides containerized environments to ensure consistent deployment across different systems.
+* **Docker Compose** *(optional)*: Manages multi-container setups during development and testing.
+* **PostgreSQL/MySQL in CI**: Used within CI workflows to mimic the real database environment for integration testing.
+
+These tools ensure that every commit made to the repository is safely built, tested, and prepared for deployment — supporting a reliable and efficient development process.
+
+
