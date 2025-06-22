@@ -89,7 +89,7 @@ Conducts manual and automated testing to identify bugs and ensure feature functi
 **Responsibility**:
 Coordinates the team, manages timelines, and ensures milestones are met. Acts as the communication bridge between technical teams and stakeholders, prioritizing tasks and maintaining project scope.
 
-Technology	Stack
+"Technology Stack"
 Django - A high-level Python web framework used to build secure and maintainable backend applications. Handles routing, models, and admin interfaces.
 Django REST Framework - An extension of Django for building RESTful APIs. Facilitates serialization, authentication, and permissions.
 PostgreSQL - A powerful, open-source relational database system used for storing structured data such as users, properties, and bookings.
